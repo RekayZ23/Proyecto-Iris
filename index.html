@@ -53,23 +53,23 @@
 <body>
 <main>
   <h1>Clasificador de Iris</h1>
-  <p class="sub">Red neuronal entrenada en Keras y ejecutada en el navegador con TensorFlow.js.</p>
+  <p class="sub">Ingrese los valores a clasificar</p>
 
   <div class="campo">
-    <label for="sl">Largo del sépalo (cm)</label>
-    <input type="number" id="sl" step="0.1" value="5.1">
+    <label for="sl">Largo del sépalo (cm) <span class="rango">rango 4.3 a 7.9</span></label>
+    <input type="number" id="sl" step="0.1" min="4.3" max="7.9" placeholder="">
   </div>
   <div class="campo">
-    <label for="sw">Ancho del sépalo (cm)</label>
-    <input type="number" id="sw" step="0.1" value="3.5">
+    <label for="sw">Ancho del sépalo (cm) <span class="rango">rango 2.0 a 4.4</span></label>
+    <input type="number" id="sw" step="0.1" min="2.0" max="4.4" placeholder="">
   </div>
   <div class="campo">
-    <label for="pl">Largo del pétalo (cm)</label>
-    <input type="number" id="pl" step="0.1" value="1.4">
+    <label for="pl">Largo del pétalo (cm) <span class="rango">rango 1.0 a 6.9</span></label>
+    <input type="number" id="pl" step="0.1" min="1.0" max="6.9" placeholder="">
   </div>
   <div class="campo">
-    <label for="pw">Ancho del pétalo (cm)</label>
-    <input type="number" id="pw" step="0.1" value="0.2">
+    <label for="pw">Ancho del pétalo (cm) <span class="rango">rango 0.1 a 2.5</span></label>
+    <input type="number" id="pw" step="0.1" min="0.1" max="2.5" placeholder="">
   </div>
 
   <button id="btn" disabled>Clasificar</button>

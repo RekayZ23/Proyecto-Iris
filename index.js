@@ -16,7 +16,7 @@ async function cargarModelo() {
     estado.textContent = 'Modelo cargado. Ingresa las medidas y presiona Clasificar.';
   } catch (error) {
     console.error(error);
-    estado.textContent = 'No se pudo cargar el modelo. Abre la página desde un servidor local, no con doble clic.';
+    estado.textContent = 'No se pudo cargar el modelo. Abre la página desde un servidor local.';
   }
 }
 
