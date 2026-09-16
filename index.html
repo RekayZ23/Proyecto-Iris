@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clasificador de Iris</title>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+<style>
+  :root {
+    --tinta: #23301f;
+    --papel: #fbfaf6;
+    --linea: #cfd3c4;
+    --hoja: #4a7c3f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 40px 20px;
+    background: var(--papel);
+    color: var(--tinta);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.55;
+  }
+  main { max-width: 34rem; margin: 0 auto; }
+  h1 { font-size: 1.9rem; font-weight: normal; margin: 0 0 .2rem; }
+  .sub { margin: 0 0 2rem; font-size: .95rem; color: #5d6455; }
+  .campo { margin-bottom: 1rem; }
+  label { display: block; font-size: .9rem; margin-bottom: .25rem; }
+  input {
+    width: 100%; padding: .55rem .7rem;
+    border: 1px solid var(--linea); border-radius: 3px;
+    background: #fff; font-family: inherit; font-size: 1rem; color: inherit;
+  }
+  input:focus { outline: 2px solid var(--hoja); outline-offset: 1px; }
+  button {
+    margin-top: .6rem; padding: .65rem 1.4rem;
+    border: none; border-radius: 3px;
+    background: var(--hoja); color: #fff;
+    font-family: inherit; font-size: 1rem; cursor: pointer;
+  }
+  button:hover { background: #3d6835; }
+  button:disabled { background: #9aa393; cursor: not-allowed; }
+  #resultado {
+    margin-top: 1.8rem; padding: 1rem 1.2rem;
+    border-left: 3px solid var(--linea); min-height: 3rem;
+  }
+  #resultado.ok { border-left-color: var(--hoja); }
+  .especie { font-size: 1.5rem; font-style: italic; }
+  .probs { font-size: .85rem; color: #5d6455; margin-top: .4rem; }
+  .estado { font-size: .85rem; color: #5d6455; margin-top: 1.2rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Clasificador de Iris</h1>
+  <p class="sub">Red neuronal entrenada en Keras y ejecutada en el navegador con TensorFlow.js.</p>
+
+  <div class="campo">
+    <label for="sl">Largo del sépalo (cm)</label>
+    <input type="number" id="sl" step="0.1" value="5.1">
+  </div>
+  <div class="campo">
+    <label for="sw">Ancho del sépalo (cm)</label>
+    <input type="number" id="sw" step="0.1" value="3.5">
+  </div>
+  <div class="campo">
+    <label for="pl">Largo del pétalo (cm)</label>
+    <input type="number" id="pl" step="0.1" value="1.4">
+  </div>
+  <div class="campo">
+    <label for="pw">Ancho del pétalo (cm)</label>
+    <input type="number" id="pw" step="0.1" value="0.2">
+  </div>
+
+  <button id="btn" disabled>Clasificar</button>
+
+  <div id="resultado"></div>
+  <p class="estado" id="estado">Cargando el modelo…</p>
+</main>
+
+<script src="index.js"></script>
+</body>
+</html>
